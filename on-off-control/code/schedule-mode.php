@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['D_ID']) && isset($_PO
 					$on_minutes  = timeToMinutes($on_time);
 					$off_minutes = timeToMinutes($off_time);
 
-					$message = "SCHDON=" . $on_minutes . ";" . $off_minutes .";". $unique_id;
+					$message = "SCHDON=" . $on_minutes . ";" . $off_minutes .";UID:". $unique_id;
 					$topic = 'CCMS/' . $device_id . '/SETVALUES';
 					publishMQTTMessage($topic, $message);
 					$response["mqtt_status"] = $message;
