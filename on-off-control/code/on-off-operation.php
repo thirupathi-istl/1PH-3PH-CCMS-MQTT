@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['D_ID']) && isset($_POS
 				mysqli_stmt_close($insert_stmt);
 				try{
 					
-					$message = $mode . ":" . $time.";".$unique_id;
+					$message = $mode . ":" . $time.";UID:".$unique_id;
 					$topic='CCMS/'.$device_id.'/SETVALUES';
 					publishMQTTMessage($topic, $message);
 					$response["mqtt_status"]=$message;
