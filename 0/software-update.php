@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         publishMQTTMessage($topic, $message);
                                         $send["mqtt_status"] = $message;
                                     } catch (Exception $e) {
-                                        $send["mqtt_status"] = '';
+                                        $send["mqtt_status"] = ''; 
                                     }
 
                                 } else {

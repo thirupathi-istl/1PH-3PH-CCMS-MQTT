@@ -108,7 +108,7 @@ if ($permission_check == 1) {
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_close($stmt);
 
-                        $message = "DEVID=" . $parameter_value .";". $unique_id;
+                        $message = "DEVID=" . $parameter_value .";UID:". $unique_id;
                         $topic = 'CCMS/' . $device_id . '/SETVALUES';
                         publishMQTT($topic, $message);
                     } else {
@@ -150,7 +150,7 @@ if ($permission_check == 1) {
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_close($stmt);
 
-                        $message = "SNO=" . $parameter_value .";". $unique_id;
+                        $message = "SNO=" . $parameter_value .";UID:". $unique_id;
                         $topic = 'CCMS/' . $device_id . '/SETVALUES';
                         publishMQTT($topic, $message);
                     } else {
@@ -191,7 +191,7 @@ if ($permission_check == 1) {
                         // Execute the prepared statement
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_close($stmt);
-                        $message = "HYST=" . $parameter_value .";". $unique_id;
+                        $message = "HYST=" . $parameter_value .";UID:". $unique_id;
                         $topic = 'CCMS/' . $device_id . '/SETVALUES';
                         publishMQTT($topic, $message);
                         // try {
@@ -243,7 +243,7 @@ if ($permission_check == 1) {
                         mysqli_stmt_close($stmt);
                         if ($parameter_value >= 1) {
                             $topic = "CCMS/" . $device_id . "/SETVALUES";
-                            $message = "LOOP_ON_OFF=1;" . $parameter_value .";". $unique_id;
+                            $message = "LOOP_ON_OFF=1;" . $parameter_value .";UID:". $unique_id;
                             publishMQTT($topic, $message);
                         } else if ($parameter_value <= 0) {
                             $topic = "CCMS/" . $device_id . "/SETVALUES";
@@ -292,7 +292,7 @@ if ($permission_check == 1) {
                         mysqli_stmt_close($stmt);
 
                         $topic = 'CCMS/' . $device_id . '/SETVALUES';
-                        $message = "ECLR=" . $parameter_values[0] . ";" . $parameter_values[1] .";". $unique_id;
+                        $message = "ECLR=" . $parameter_values[0] . ";" . $parameter_values[1] .";UID:". $unique_id;
                         publishMQTT($topic, $message);
                     } else {
                         $response["message"] = "Error preparing query";
@@ -335,7 +335,7 @@ if ($permission_check == 1) {
                         mysqli_stmt_close($stmt);
 
                         $topic = 'CCMS/' . $device_id . '/SETVALUES';
-                        $message = "WIFI=" . $parameter_values[0] . ";" . $parameter_values[1] .";". $unique_id;
+                        $message = "WIFI=" . $parameter_values[0] . ";" . $parameter_values[1] .";UID:". $unique_id;
                         publishMQTT($topic, $message);
                     } else {
                         $response["message"] = "Error preparing query";
@@ -372,7 +372,7 @@ if ($permission_check == 1) {
                     
                     $device_id = strtoupper($device_id);
                     $topic = 'CCMS/' . $device_id . '/SETVALUES';
-                    $message = "READ_SETTINGS" .";". $unique_id;
+                    $message = "READ_SETTINGS" .";UID:". $unique_id;
                     publishMQTT($topic, $message);
 
                     $response["status"] = "success";
@@ -404,7 +404,7 @@ if ($permission_check == 1) {
                         mysqli_stmt_close($stmt);
 
                         $topic = 'CCMS/' . $device_id . '/SETVALUES';
-                        $message = "RESET=" . $parameter_value .";". $unique_id;
+                        $message = "RESET=" . $parameter_value .";UID:". $unique_id;
                         publishMQTT($topic, $message);
                     } else {
                         $response["message"] = "Error preparing query";

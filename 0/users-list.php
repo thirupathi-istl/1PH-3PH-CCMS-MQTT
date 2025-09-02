@@ -131,8 +131,8 @@ $user_login_id = $sessionVars['user_login_id'];
                                     <div class="col-auto">
                                         <select id="items-per-page" class="form-select">
                                             <option value="10">10</option>
-                                            <option value="20" selected>20</option>
-                                            <option value="50">50</option>
+                                            <option value="20" >20</option>
+                                            <option value="50" selected>50</option>
                                             <option value="100">100</option>
                                             <option value="100">200</option>
                                         </select>

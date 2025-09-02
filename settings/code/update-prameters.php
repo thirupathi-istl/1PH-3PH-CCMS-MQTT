@@ -153,7 +153,7 @@ if ($permission_check == 1) {
                         mysqli_stmt_close($stmt);
                         try {
 
-                            $message = "FRAMETIME=" .$updated_value.";". $unique_id;
+                            $message = "FRAMETIME=" .$updated_value.";UID:". $unique_id;
                             $topic = 'CCMS/' . $device_id_update . '/SETVALUES';
                             publishMQTTMessage($topic, $message);
                             $response["mqtt_status"] = $message;

@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['D_ID']) && isset($_PO
 			}
 			
 			try {
-				$mqtt_message = "CALIB:" . $calib_frame. $unique_id;
+				$mqtt_message = "CALIB:" . $calib_frame. "UID:".$unique_id;
 				$mqtt_topic = 'CCMS/' . $device_ids . '/SETVALUES';
 				publishMQTTMessage($mqtt_topic, $mqtt_message);
 				$response["mqtt_status"] = $mqtt_message;

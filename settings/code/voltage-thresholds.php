@@ -99,7 +99,7 @@ if ($permission_check == 1)
 
                 try{
 
-					$message ="V_LOWER=" . $r_lower_volt .";".$y_lower_volt.";". $b_lower_volt.";V_UPPER=". $r_upper_volt .";".$y_upper_volt.";". $b_upper_volt.";".$unique_id;
+					$message ="V_LOWER=" . $r_lower_volt .";".$y_lower_volt.";". $b_lower_volt.";V_UPPER=". $r_upper_volt .";".$y_upper_volt.";". $b_upper_volt.";UID:".$unique_id;
 					$topic='CCMS/'.$device_id_update.'/SETVALUES';
 					publishMQTTMessage($topic, $message);
 					$response["mqtt_status"]=$message;

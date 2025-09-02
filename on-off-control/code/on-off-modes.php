@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['D_ID']) && isset($_PO
 			mysqli_query($conn_db, $sql_mode);
 			try {
 				
-				$message = "ON_OFF_MODE:". $mode .";".$unique_id;
+				$message = "ON_OFF_MODE:". $mode .";UID:".$unique_id;
 				$topic = 'CCMS/' . $device_id . '/SETVALUES';
 				publishMQTTMessage($topic, $message);
 				$response["mqtt_status"] = $message;

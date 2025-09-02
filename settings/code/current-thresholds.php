@@ -97,7 +97,7 @@ if ($permission_check == 1)
                 mysqli_stmt_close($stmt);
                  try{
 
-					$message ="I_UPPER=" . $r_current .";".$y_current.";". $b_current .";". $unique_id;
+					$message ="I_UPPER=" . $r_current .";".$y_current.";". $b_current .";UID:". $unique_id;
 					$topic='CCMS/'.$device_id_update.'/SETVALUES';
 					publishMQTTMessage($topic, $message);
 					$response["mqtt_status"]=$message;
